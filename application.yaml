@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: eks-sample-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: eks-sample-app
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/KunalCh23/argocd-sample-deployment.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
