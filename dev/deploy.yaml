@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: react-app-container
-          image: kunalch23/nodejs-helloworld:14
+          image: kunalch23/nodejs-helloworld:15
           ports:
             - containerPort: 3000
 
